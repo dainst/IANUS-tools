@@ -10,8 +10,15 @@ schema name. The provided mapping is for the DAI Core Metadata, e.g.
 Currently it is only tested and probably working for TIF & JPEG Files.
 
 ## Requirements:
+
+### CSV metadate file
 The csv file must contain a row named "Dateiname", which contains the correct
 file name. Further it is expected to have TAB as the delimeter.
+
+### Python
+
+* Python 2.7.14
+* Pip
 
 The python packages, that exceeds the python standard installations are listed in the requirements.txt and could be installed by:
 ```bash
