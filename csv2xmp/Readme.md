@@ -7,10 +7,12 @@ adds all the metadata in the csv to the appropriate file (matching by filename).
 The mapping.py data contains the mapping between the source and the target
 schema name. The provided mapping is for the DAI Core Metadata, e.g.
 "01_Titel" is mapped to "dc:title".
+Currently it is only tested and proably working for TIF & JPEG Files.
 
 ## Requirements:
 The csv file must contain a row named "Dateiname", which contains the correct
 file name. Further it is expected to have TAB as the delimeter.
+
 The python packages, that exceeds the python standard installations are listed in the requirements.txt and could be installed by:
 ```bash
 pip install -r requirements.txt
