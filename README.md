@@ -1,2 +1,2 @@
-# ianus-scripts
-Repo for data curation scripts in ianus
+# IANUS-tools
+Repository for data curation scripts and tools in IANUS.
