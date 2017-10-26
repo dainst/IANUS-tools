@@ -7,7 +7,7 @@ adds all the metadata in the csv to the appropriate file (matching by filename).
 The mapping.py data contains the mapping between the source and the target
 schema name. The provided mapping is for the DAI Core Metadata, e.g.
 "01_Titel" is mapped to "dc:title".
-Currently it is only tested and proably working for TIF & JPEG Files.
+Currently it is only tested and probably working for TIF & JPEG Files.
 
 ## Requirements:
 The csv file must contain a row named "Dateiname", which contains the correct
