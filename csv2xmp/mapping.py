@@ -10,7 +10,7 @@ mapping = {
     "09_Ortsbezeichnung2":"Iptc4xmpCore:Location",
     "10_Objekt1":"dc:description",
     "11_Objekt2":"photoshop:SupplementalCategory",
-#    "12_Objekt3":"LocalCaption",
+#    "12_Objekt3":"Iptc4xmpCore:LocalCaption",
     "13_Dateityp":"dc:format",
     "Land":"photoshop:Country",
     "Schlagworte":"dc:subject",
