@@ -60,7 +60,7 @@ def metadataToFile(result, targetDir, fileDict):
             xmpfile.close_file()
 
         except KeyError:
-            errorMessage = 'Missing file for metadata entry: ' + row['Dateiname']
+            errorMessage = 'KeyError found, while processing' + row['Dateiname'] + '. Perhaps wrong mapping.py settings?']
             print errorMessage
             logging.debug(errorMessage)
 
