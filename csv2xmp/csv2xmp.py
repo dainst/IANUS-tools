@@ -1,4 +1,4 @@
-# author: Philipp Gerth
+# author: Philipp Gerth (philipp.gerth@dainst.de)
 #
 # The script is used to enrich files with xmp metadata.
 # It takes the metadata from a csv file and writes it to the appropriate file.
@@ -43,6 +43,7 @@ logging.basicConfig(
 
 def metadataToFile(result, fileDict):
     for row in result:
+        # TODO: Check for existing file in fileDict. If not existing, KeyError will be raised as well.
         try:
             path = fileDict[row['Dateiname']]
             print("------------------------------")
@@ -55,11 +56,9 @@ def metadataToFile(result, fileDict):
                 try:
                     if row[key] != "":
                         value_split = value.strip().split(':', 1)
-                        print (row[key])
-                        print (xmp)
-
+                        # if option -o: the original xmp data will be deleted
                         if overrideMD == 1:
-                            print("DELETING METADATA")
+                            xmp.delete_property(eval(value_split[0]), unicode(value_split[1], 'utf-8'))
 
                         xmp.set_property(eval(value_split[0]), unicode(value_split[1], 'utf-8'), unicode(row[key], 'utf-8') )
                 except libxmp.XMPError:
@@ -71,7 +70,7 @@ def metadataToFile(result, fileDict):
             xmpfile.close_file()
 
         except KeyError:
-            errorMessage = 'KeyError found, while processing' + row['Dateiname'] + '. Perhaps wrong mapping.py settings?'
+            errorMessage = 'KeyError found, while processing ' + row['Dateiname'] + '. Perhaps wrong mapping.py settings?'
             print errorMessage
             logging.debug(errorMessage)
 
