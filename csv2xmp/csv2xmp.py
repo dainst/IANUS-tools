@@ -28,13 +28,20 @@ from libxmp.consts import XMP_NS_DC as dc
 from libxmp.consts import XMP_NS_Photoshop as photoshop
 from libxmp.consts import XMP_NS_IPTCCore as Iptc4xmpCore
 
+#declaration of global variables
+csvFile = ''
+targetDir = ''
+fileType = ''
+overrideMD = 0
+
+
 #logging basic configuration
 logging.basicConfig(
     filename='csv2xmp.log',
     filemode='w',
     level=logging.DEBUG)
 
-def metadataToFile(result, targetDir, fileDict):
+def metadataToFile(result, fileDict):
     for row in result:
         try:
             path = fileDict[row['Dateiname']]
@@ -50,6 +57,10 @@ def metadataToFile(result, targetDir, fileDict):
                         value_split = value.strip().split(':', 1)
                         print (row[key])
                         print (xmp)
+
+                        if overrideMD == 1:
+                            print("DELETING METADATA")
+
                         xmp.set_property(eval(value_split[0]), unicode(value_split[1], 'utf-8'), unicode(row[key], 'utf-8') )
                 except libxmp.XMPError:
                     errorMessage = 'Attribute ' + value.upper() + ' already existing for file: ' + row['Dateiname']
@@ -64,14 +75,14 @@ def metadataToFile(result, targetDir, fileDict):
             print errorMessage
             logging.debug(errorMessage)
 
-def metadataByCsv(file, targetDir, fileDict):
+def metadataByCsv(fileDict):
 
-    with open(file) as csvfile:
-        result = csv.DictReader(csvfile, delimiter='\t')
+    with open(csvFile) as file:
+        result = csv.DictReader(file, delimiter='\t')
 
-        metadataToFile(result, targetDir, fileDict)
+        metadataToFile(result, fileDict)
 
-def createFileDict(targetDir, fileType, fileDict):
+def createFileDict(fileDict):
 
     for root, dirs, files in os.walk(targetDir, topdown=False):
         for name in files:
@@ -83,15 +94,12 @@ def createFileDict(targetDir, fileType, fileDict):
     return fileDict
 
 def main(argv):
-    csvFile = ''
-    targetDir = ''
-    fileType = ''
     fileDict = {}
 
     try:
-        opts, args = getopt.getopt(argv,"hc:d:t:",["csvfile=","targetdirectory=","filetype="])
+        opts, args = getopt.getopt(argv,"hc:d:t:o",["csvfile=","targetdirectory=","filetype="])
     except getopt.GetoptError:
-        print 'csv2xmp.py -c <csvfile> -d <targetdirectory> [-t <filetype>]'
+        print 'csv2xmp.py -c <csvfile> -d <targetdirectory> [-t <filetype>] [-o]'
         sys.exit(2)
 
     for opt, arg in opts:
@@ -99,16 +107,22 @@ def main(argv):
             print 'csv2xmp.py -c <csvfile> -d <targetdirectory> [-t <filetype>]'
             sys.exit()
         elif opt in ("-c", "--csvfile"):
+            global csvFile
             csvFile = arg
         elif opt in ("-d", "--targetdirectory"):
+            global targetDir
             targetDir = arg
         elif opt in ("-t", "--filetype"):
+            global fileType
             fileType = arg
+        elif opt in ("-o", "--override"):
+            global overrideMD
+            overrideMD = 1
 
     if csvFile != "":
         print 'Csv input file is: ', csvFile
-        createFileDict(targetDir, fileType, fileDict)
-        metadataByCsv(csvFile, targetDir, fileDict)
+        createFileDict(fileDict)
+        metadataByCsv(fileDict)
 
 if __name__ == "__main__":
     main(sys.argv[1:])
