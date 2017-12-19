@@ -26,7 +26,7 @@ pip install -r requirements.txt
 ```
 Or directly, as it is just one package:
 ```bash
-python-xmp-toolkit==2.0.1
+pip install python-xmp-toolkit==2.0.1
 ```
 
 ## Parameters:
