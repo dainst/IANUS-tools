@@ -70,7 +70,7 @@ def metadataToFile(result, fileDict):
             xmpfile.close_file()
 
         except KeyError:
-            errorMessage = 'KeyError found, while processing ' + row['Dateiname'] + '. Perhaps wrong mapping.py settings?'
+            errorMessage = 'KeyError found, while processing ' + row['Dateiname'] + '. Wrong mapping.py settings or missing File?'
             print errorMessage
             logging.debug(errorMessage)
 
