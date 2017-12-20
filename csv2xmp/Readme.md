@@ -15,6 +15,17 @@ Currently it is only tested and probably working for TIF & JPEG Files.
 The csv file must contain a row named "Dateiname", which contains the correct
 file name. Further it is expected to have TAB as the delimeter.
 
+### Exempi
+
+The tool exempi is used in the script and needs to be installed. For Mac using homebrew [1]:
+
+```
+brew install exempi
+```
+
+[1] https://brew.sh/index_de.html
+
+
 ### Python
 
 * Python 2.7.14
