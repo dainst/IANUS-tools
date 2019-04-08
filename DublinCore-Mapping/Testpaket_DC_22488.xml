@@ -1,0 +1,46 @@
+<package>
+	<dc:identifier xsi:type ='dcterms:DOI'>10.13149/001.mcus7z-2</dc:identifier>
+	<dc:identifier xsi:type ='dcterms:URL'>http://datenportal.ianus-fdz.de/collections/2016-00001</dc:identifier>
+	<dc:format xsi:type ='dcterms:extent'>53,4 MB</dc:format>
+	<dc:title xml:lang ='de'>Holozängeschichte der Tierwelt Europas</dc:title>
+	<dc:title xml:lang ='en'>The Holocene History of the European Vertebrate Fauna</dc:title>
+	<dc:subject>Naturwissenschaften</dc:subject>
+	<dc:subject>Archäozoologie</dc:subject>
+	<dc:subject>Umweltgeschichte</dc:subject>
+	<dc:subject>Wirbeltiere</dc:subject>
+	<dc:subject>Faunengeschichte</dc:subject>
+	<dc:subject>Säugetiere</dc:subject>
+	<dc:subject>Räumliche Auswertungen</dc:subject>
+	<dc:subject>Datennachnutzung</dc:subject>
+	<dc:subject>Auswertung von Texten</dc:subject>
+	<dc:subject>Materialuntersuchungen (organisch)</dc:subject>
+	<dc:subject>Tierrestanalyse</dc:subject>
+	<dc:subject>Literaturrecherche</dc:subject>
+	<dc:subject>Amphibien/Reptilien</dc:subject>
+	<dc:subject>Fische</dc:subject>
+	<dc:subject>Vögel</dc:subject>
+	<dc:type xsi:type='dcterms:DCMIType'>Collection</dc:type>
+	<dc:type>PDF-Dokument</dc:type>
+	<dc:type>Textdokument</dc:type>
+	<dc:type>Tabelle</dc:type>
+	<dc:type>Strukturierter Text</dc:type>
+	<dc:type>GIS</dc:type>
+	<dc:type>Sonstiges</dc:type>
+	<dc:type>Digitale Datensammlung</dc:type>
+	<dc:type>(Forschungs-)Projekt</dc:type>
+	<dc:description xml:lang ='de'>Zur Erforschung der Holozängeschichte der Tierwelt Europas wurden aus über 4.500 Publikationen die wesentlichen Informationen von über 100 Tierarten und -gattungen zusammengetragen. Insgesamt wurden 8.258 Fundorte von Tierresten in einer Datenbank dokumentiert. Aus dieser Datenbank wurden später alle Daten in Tabellenform exportiert, in der sie dann weiter bearbeitet wurden. Der Datenbankexport wurde in die Ordner Katalogdateien, Faunadateien und Maßdateien aufgeteilt. Die Tabellen sind nach Fundorten sortiert, die die Datierung, Fundort- und Bergungsart, Literatur, nachgewiesenen Taxa der Faunenreste mit Angabe der Häufigkeit und die osteometrischen Daten der verschiedenen Tierarten beinhalten. Die Struktur der Datensammlung wird eingehend in dem Dokument _README_Eurofauna_Grundlagen beschrieben. (Anne Sieverling)</dc:description>
+	<dc:description xml:lang ='en'>In order to investigate the holocene history of the animal world of Europe, more than 4.500 publications were collected to gather the essential information from more than 100 animal species and genera. A total of 8.258 sites with animal remains were documented in a database. From this database, all data were exported in table form, in which they were then further processed. The database export was divided into the folder catalog files, fauna files and dimension files. The tables are sorted according to sites and include information about the date, site and find situation, literature, proven taxa of the faunal remains, indicating the frequency and the osteometric data of the different species of animals. The structure of the data collection is described in detail in the document _README_Eurofauna_Grundlagen. (Anne Sieverling)</dc:description>
+	<dc:creator>Dirk Heinrich</dc:creator>
+	<dc:creator>Angela von den Driesch</dc:creator>
+	<dc:creator>Norbert Benecke</dc:creator>
+	<dc:contributor>Dirk Heinrich</dc:contributor>
+	<dc:contributor>Norbert Benecke</dc:contributor>
+	<dc:contributor>Angela von den Driesch</dc:contributor>
+	<dc:coverage xsi:type='dcterms:temporal'>Holozän</dc:coverage>
+	<dc:coverage xsi:type='dcterms:spatial'>Europa</dc:coverage>
+	<dc:publisher>IANUS - Forschungsdatenzentrum Archäologie & Altertumswissenschaften</dc:publisher>
+	<dc:language>eng</dc:language>
+	<dc:rights>CC-BY 3.0</dc:rights>
+	<dcterms:issued xsi:type = 'dcterms:W3CDTF'>2016-06-01</dcterms:issued>
+	<dc:relation>keine</dc:relation>
+</package>
